@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Signin</title>
+
+    <link href="../vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="./css/signin.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <form class="form-signin">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <label for="txtUsername" class="sr-only">Username</label>
+        <input type="text" id="txtUsername" class="form-control" placeholder="Username" required autofocus>
+        <label for="txtPassword" class="sr-only">Password</label>
+        <input type="password" id="txtPassword" class="form-control" placeholder="Password" required>
+
+        <button class="btn btn-lg btn-primary btn-block" type="button" id="btnSignin">Sign in</button>
+        <a class="btn btn-lg btn-default btn-block" href="./settings.html">Setting</a>
+      </form>
+
+    </div> <!-- /container -->
+
+    <script src="../vendor/jquery/dist/jquery.min.js"></script>
+    <script src="./app.js"></script>
+    
+    <script src="./js/signin.js"></script>
+  </body>
+</html>

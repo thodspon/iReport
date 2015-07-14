@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>iReport-Roi-et</title>
+        <link href="../vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="./css/themes/lumen.css" rel="stylesheet">
+        <link href="./css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed"
+                            data-toggle="collapse" data-target="#navbar"
+                            aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">
+                        <span class="fa fa-fw fa-windows"></span> iReport
+                    </a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="index.html">
+                                <span class="fa fa-fw fa-home"></span> หน้าหลัก
+                            </a>
+                        </li>
+                        <li>
+                            <a href="reports.html">
+                                <span class="fa fa-fw fa-print"></span> รายงาน
+                            </a>
+                        </li>
+                        <li>
+                            <a href="villages.html">
+                                <span class="fa fa-fw fa-home"></span> หมู่บ้านรับผิดชอบ
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="users.html">
+                                <span class="fa fa-fw fa-user-md"></span> ผู้ใช้งาน
+                            </a>
+                        </li>
+
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-haspopup="true" aria-expanded="false">
+                                <span class="fa fa-fw fa-cogs"></span> Options <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="settings.html">
+                                        <span class="fa fa-fw fa-database"></span> กำหนดค่าการเชื่อมต่อ
+                                    </a>
+                                </li>
+                                <li role="separator" class="divider"></li>
+                                <li>
+                                    <a href="login.html">
+                                        <span class="fa fa-fw fa-sign-out"></span>  ออกจากโปรแกรม
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+
+        <div class="container">
+
+            <ol class="breadcrumb">
+                <li><a href="index.html">หน้าหลัก</a></li>
+                <li class="active">ผู้ใช้งาน</li>
+            </ol>
+
+            <div class="row well well-sm">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <input type="text" name="txtQuery" id="txtQuery" placeholder="ค้นหา..." class="form-control">
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="button" id="btnSearch">
+                                    <span class="fa fa-search"></span>
+                                </button>
+                                <button class="btn btn-success" type="button" id="btnRefresh">
+                                    <span class="fa fa-refresh"></span>
+                                </button>
+                            </span>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped" id="tblList">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>ชื่อผู้ใช้งาน</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td colspan="3">..</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <button class="btn btn-success" id="btnNew">เพิ่ม..</button>
+
+        </div> <!-- /container -->
+
+        <!-- New modal -->
+        <div class="modal fade" id="mdlNew">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" data-dismiss="modal" arial-label="Close" class="close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title">เพิ่มผู้ใช้งาน</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form action="#">
+                            <input type="hidden" id="txtStatus" value="0">
+                            <div class="form-group">
+                                <label for="txtUsername">ชื่อผู้ใช้งาน</label>
+                                <input type="text" name="txtUsername" id="txtUsername" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtUsername">รหัสผ่าน</label>
+                                <input type="password" name="txtPassword" id="txtPassword" class="form-control">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="btnDoSave">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End new modal -->
+        <script src="../vendor/jquery/dist/jquery.min.js"></script>
+        <script src="../vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- User script -->
+        <script src="./app.js"></script>
+        <script src="./js/users.js"></script>
+    </body>
+</html>

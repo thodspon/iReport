@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>iReport-Roi-et</title>
+        <link href="../vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="./css/themes/lumen.css" rel="stylesheet">
+        <link href="./css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed"
+                            data-toggle="collapse" data-target="#navbar"
+                            aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">
+                        <span class="fa fa-fw fa-windows"></span> iReport
+                    </a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="index.html">
+                                <span class="fa fa-fw fa-home"></span> หน้าหลัก
+                            </a>
+                        </li>
+                        <li>
+                            <a href="reports.html">
+                                <span class="fa fa-fw fa-print"></span> รายงาน
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="villages.html">
+                                <span class="fa fa-fw fa-home"></span> หมู่บ้านรับผิดชอบ
+                            </a>
+                        </li>
+                        <li>
+                            <a href="users.html">
+                                <span class="fa fa-fw fa-user-md"></span> ผู้ใช้งาน
+                            </a>
+                        </li>
+
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-haspopup="true" aria-expanded="false">
+                                <span class="fa fa-fw fa-cogs"></span> Options <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="settings.html">
+                                        <span class="fa fa-fw fa-database"></span> กำหนดค่าการเชื่อมต่อ
+                                    </a>
+                                </li>
+                                <li role="separator" class="divider"></li>
+                                <li>
+                                    <a href="login.html">
+                                        <span class="fa fa-fw fa-sign-out"></span>  ออกจากโปรแกรม
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+
+        <div class="container">
+
+            <ol class="breadcrumb">
+                <li><a href="index.html">หน้าหลัก</a></li>
+                <li class="active">หมู่บ้านในเขตรับผิดชอบ</li>
+            </ol>
+
+            <input type="hidden" id="txtVillageId" value=""/>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <table class="table table-striped" id="tblList">
+                        <thead>
+                        <tr>
+                            <th>รหัสหมู่บ้าน</th>
+                            <th>หมู่ที่</th>
+                            <th>ชื่อหมู่บ้าน</th>
+                            <th>#</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td colspan="5">...</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-6">
+                    <table class="table table-striped" id="tblHouseList">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>เลขที่</th>
+                            <th>รหัสบ้าน</th>
+                            <th>Lat</th>
+                            <th>Lng</th>
+                            <th>#</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td colspan="6">...</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6" id="map-canvas6" style="height: 450px;"></div>
+            </div>
+
+        </div> <!-- /container -->
+
+        <!--Map-->
+        <div class="modal fade" id="mdlSetMap">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" data-dismiss="modal" arial-label="Close" class="close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title">กำหนดพิกัดหลังคาเรือน</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form action="" class="form-inline well well-sm">
+
+                            <input type="hidden" id="txtHouseId" value=""/>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="txtLat">Latitude</label>
+                                    <input type="text" class="form-control" id="txtLat" readonly="true"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="txtLng">Longitude</label>
+                                    <input type="text" class="form-control" id="txtLng" readonly="true"/>
+                                </div>
+                            </div>
+                        </form>
+                        <div id="map-canvas" style="height: 380px;"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="btnDoSave">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&language=th"></script>
+        <script src="../vendor/jquery/dist/jquery.min.js"></script>
+        <script src="../vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="./app.js"></script>
+        <script src="./js/villages.js"></script>
+
+    </body>
+</html>

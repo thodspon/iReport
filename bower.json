@@ -1,0 +1,22 @@
+{
+  "name": "iReport",
+  "version": "0.0.0",
+  "authors": [
+    "thodspon"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "jquery": "~2.1.4",
+    "font-awesome": "~4.3.0",
+    "paging": "~1.2.0",
+    "highcharts": "~4.1.6"
+  }
+}

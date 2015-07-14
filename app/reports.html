@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>iReport-Roi-et</title>
+    <link href="../vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+      <link href="./css/themes/lumen.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container">
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed"
+                          data-toggle="collapse" data-target="#navbar"
+                          aria-expanded="false" aria-controls="navbar">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="#">
+                      <span class="fa fa-fw fa-windows"></span> iReport
+                  </a>
+              </div>
+              <div id="navbar" class="navbar-collapse collapse">
+                  <ul class="nav navbar-nav">
+                      <li>
+                          <a href="index.html">
+                              <span class="fa fa-fw fa-home"></span> หน้าหลัก
+                          </a>
+                      </li>
+                      <li class="active">
+                          <a href="reports.html">
+                              <span class="fa fa-fw fa-print"></span> รายงาน
+                          </a>
+                      </li>
+                      <li>
+                          <a href="villages.html">
+                              <span class="fa fa-fw fa-home"></span> หมู่บ้านรับผิดชอบ
+                          </a>
+                      </li>
+                      <li>
+                          <a href="users.html">
+                              <span class="fa fa-fw fa-user-md"></span> ผู้ใช้งาน
+                          </a>
+                      </li>
+
+                  </ul>
+                  <ul class="nav navbar-nav navbar-right">
+                      <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                             aria-haspopup="true" aria-expanded="false">
+                              <span class="fa fa-fw fa-cogs"></span> Options <span class="caret"></span></a>
+                          <ul class="dropdown-menu">
+                              <li>
+                                  <a href="settings.html">
+                                      <span class="fa fa-fw fa-database"></span> กำหนดค่าการเชื่อมต่อ
+                                  </a>
+                              </li>
+                              <li role="separator" class="divider"></li>
+                              <li>
+                                  <a href="login.html">
+                                      <span class="fa fa-fw fa-sign-out"></span>  ออกจากโปรแกรม
+                                  </a>
+                              </li>
+                          </ul>
+                      </li>
+                  </ul>
+              </div><!--/.nav-collapse -->
+          </div>
+      </nav>
+
+    <div class="container">
+
+        <ol class="breadcrumb">
+            <li><a href="index.html">หน้าหลัก</a></li>
+            <li class="active">รายงาน</li>
+        </ol>
+
+        <form action="#" class="form-inline well well-sm">
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="">ตั้งแต่</label>
+                    <input type="date" name="txtStartDate" id="txtStartDate"
+                    style="width: 165px;" class="form-control">
+                </div>
+                <div class="col-md-3">
+                    <label for="">ถึง</label>
+                    <input type="date" name="txtEndDate" style="width: 165px;"
+                    id="txtEndDate" class="form-control">
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-success" id="btnProcess">
+                        <span class="fa fs-search"></span>
+                        แสดงรายการ
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <ul class="nav nav-tabs">
+            <li class="active">
+                <a href="#tab1" data-toggle="tab">สถิติแยกรายสิทธิการรักษา</a>
+            </li>
+            <li>
+                <a href="#tab2" data-toggle="tab">10 อันดับโรค</a>
+            </li>
+        </ul>
+
+        <div class="tab-content" style="padding: 10px;">
+            <div class="tab-pane active" id="tab1">
+                <div class="row">
+                    <div class="col-md-6">
+                        <table class="table table-striped" id="tblTopTenPttypeList">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>สิทธิ์การรักษา</th>
+                                    <th>จำนวน</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="3">...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="pieChart"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="tab2">
+                <div class="row">
+                    <div class="col-md-7">
+                        <table class="table table-striped" id="tblTopTenList">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>ชื่อโรค</th>
+                                    <th>จำนวน</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="3">...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-5">
+                        <div id="charts"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div> <!-- /container -->
+
+    <script src="../vendor/jquery/dist/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../vendor/highcharts/highcharts.js"></script>
+
+    <script src="./app.js"></script>
+    <script src="./js/reports.js"></script>
+  </body>
+</html>
